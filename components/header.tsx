@@ -1,0 +1,183 @@
+"use client";
+
+import Link from "next/link";
+import {
+  Search,
+  User,
+  Heart,
+  ShoppingCart,
+  ChevronDown,
+} from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState, AppDispatch } from "@/store";
+import { setSearchQuery } from "@/store/slices/dataSlice";
+
+export function Header() {
+  const dispatch = useDispatch<AppDispatch>();
+  const { navigationLinks, headerActions, cartItems, favoriteProductIds, searchQuery } = useSelector(
+    (state: RootState) => state.data
+  );
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setSearchQuery(e.target.value));
+  };
+
+  return (
+    <header className="flex flex-col lg:flex-nowrap z-50 bg-white dark:bg-neutral-900">
+      <div className="max-w-340 basis-full w-full mx-auto py-3 px-4 sm:px-6 lg:px-8">
+        <div className="w-full flex md:flex-nowrap md:items-center gap-2 lg:gap-6">
+          <div className="order-1 md:w-auto flex items-center gap-x-1">
+            <Link
+              href="/"
+              className="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
+              aria-label="Logo"
+            >
+              <span className="text-emerald-600 dark:text-emerald-500 font-bold text-2xl">
+                Vodex.
+              </span>
+            </Link>
+          </div>
+
+          <div className="md:grow order-2">
+            <div className="relative flex basis-full items-center gap-x-1 md:gap-x-3">
+              <div className="hidden md:block w-full">
+                <div className="relative w-full">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className="py-1.5 ps-4 sm:py-2.5 pe-10 block w-full bg-white border border-gray-200 text-base sm:text-sm rounded-full focus:outline-none focus:border-emerald-500 focus:ring-emerald-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder:text-neutral-400"
+                    placeholder="Search products..."
+                  />
+                  <div className="absolute inset-y-0 end-0 z-10 flex items-center pe-1 sm:pe-1.5">
+                    <button
+                      type="button"
+                      className="inline-flex shrink-0 justify-center items-center w-10 h-8 rounded-full bg-emerald-600 text-white hover:bg-emerald-700 focus:outline-none focus:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 dark:focus:bg-emerald-600"
+                    >
+                      <Search className="shrink-0 size-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="order-2 md:order-3 ms-auto lg:ms-0">
+            <div className="flex justify-end items-center gap-x-2">
+              {headerActions.map((action) => {
+                const Icon =
+                  {
+                    user: User,
+                    heart: Heart,
+                    "shopping-cart": ShoppingCart,
+                  }[action.icon] || User;
+
+                let badgeCount = action.badge || 0;
+                if (action.id === "cart") {
+                  badgeCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+                } else if (action.id === "favorite") {
+                  badgeCount = favoriteProductIds.length;
+                }
+
+                return (
+                  <Link
+                    key={action.id}
+                    href={action.href}
+                    className="relative flex flex-col justify-center items-center gap-1 min-w-14 min-h-8 text-xs rounded-full text-gray-800 hover:text-emerald-600 focus:outline-none focus:text-emerald-600 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400"
+                  >
+                    <Icon className="shrink-0 size-4 text-gray-800 dark:text-neutral-200" />
+                    {action.label}
+                    {badgeCount > 0 && (
+                      <span className="absolute -top-1 -right-1 inline-flex items-center justify-center size-4 text-xs font-bold text-white bg-neutral-700 rounded-full">
+                        {badgeCount}
+                      </span>
+                    )}
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        <div className="md:hidden mt-2.5 md:mt-0 w-full">
+          <div className="relative w-full">
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={handleSearchChange}
+              className="py-1.5 ps-4 sm:py-2.5 pe-10 block w-full bg-white border border-gray-200 text-base sm:text-sm rounded-full focus:outline-none focus:border-emerald-600 focus:ring-emerald-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder:text-neutral-400"
+              placeholder="Search products..."
+            />
+            <div className="absolute inset-y-0 end-0 z-10 flex items-center pe-1 sm:pe-1.5">
+              <button
+                type="button"
+                className="inline-flex shrink-0 justify-center items-center w-10 h-8 rounded-full bg-emerald-600 text-white hover:bg-emerald-700 focus:outline-none focus:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 dark:focus:bg-emerald-600"
+              >
+                <Search className="shrink-0 size-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-340 w-full mx-auto px-4 sm:px-6 lg:px-8 pb-1">
+        <div className="relative flex basis-full items-center gap-x-1 min-h-[44px]">
+          <div className="flex flex-row items-center gap-x-1 overflow-x-auto [&::-webkit-scrollbar]:h-0 w-full">
+            {navigationLinks.map((link) => {
+              if (link.subItems) {
+                return (
+                  <DropdownMenu key={link.id}>
+                    <DropdownMenuTrigger asChild>
+                      <button
+                        className={`relative py-2 px-3 w-full lg:w-auto flex items-center gap-x-1.5 text-sm whitespace-nowrap text-start text-gray-800 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-800 ${
+                          link.isActive
+                            ? "cursor-pointer after:absolute after:start-1/2 after:bottom-[3px] after:w-4 after:h-[3px] after:bg-emerald-500 after:rounded-full after:-translate-x-1/2"
+                            : ""
+                        }`}
+                      >
+                        {link.label}
+                        <ChevronDown className="shrink-0 size-4" />
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="w-56">
+                      {link.subItems.map((subItem) => (
+                        <DropdownMenuItem key={subItem.label} asChild>
+                          <Link
+                            href={subItem.href}
+                            className={`cursor-pointer ${
+                              subItem.isActive
+                                ? "bg-gray-100 dark:bg-neutral-800"
+                                : ""
+                            }`}
+                          >
+                            {subItem.label}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                );
+              }
+
+              return (
+                <Link
+                  key={link.id}
+                  href={link.href || "#"}
+                  className="relative py-2 px-3 w-full lg:w-auto flex items-center gap-x-1.5 text-sm whitespace-nowrap text-start text-gray-800 rounded-full hover:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-100 dark:text-neutral-200 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}

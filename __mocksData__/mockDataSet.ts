@@ -1,0 +1,1433 @@
+export const Categories = [
+  {
+    id: "holiday_sales",
+    name: "Holiday Sales",
+    icon: "https://images.unsplash.com/photo-1545128665-449f45abf48f?q=80&w=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "#",
+  },
+  {
+    id: "happy_holiday",
+    name: " Happy Holidays",
+    icon: "https://images.unsplash.com/photo-1678851836066-dc27614cc56b?q=80&w=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "#",
+  },
+  {
+    id: "gifts",
+    name: "Gifts",
+    icon: "https://images.unsplash.com/photo-1543918225-4cc71ea72d5a?q=80&w=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "#",
+  },
+  {
+    id: "accessories",
+    name: "Accessories",
+    icon: "https://images.unsplash.com/photo-1686135187001-d3bbfdeeef8b?q=80&w=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    url: "#",
+  },
+];
+
+export const Banners = [
+  {
+    id: "banner1",
+    title: "Including the new Pros and Airs.",
+    subtitle: "iPad Cases",
+    image:
+      "https://images.unsplash.com/photo-1713492664635-1363f44734ef?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ctaText: "Shop now",
+    ctaLink: "/collections/ipad",
+    gridImages: [],
+  },
+  {
+    id: "banner2",
+    title:
+      "From lightweight leathers to the cases, new seasonal favorites are here.",
+    subtitle: "New styles",
+    image:
+      "https://images.unsplash.com/photo-1644462982538-ee5ce6abd2db?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ctaText: "Shop now",
+    ctaLink: "/collections/new-styles",
+    gridImages: [],
+  },
+  {
+    id: "banner3",
+    title: "40% off",
+    subtitle: "Up to",
+    image:
+      "https://images.unsplash.com/photo-1713492664635-1363f44734ef?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ctaText: "Shop now",
+    ctaLink: "/collections/ipad",
+    gridImages: [
+      "https://images.unsplash.com/photo-1548874468-025d0edfdf8b?q=80&w=320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1513652990199-8a52e2313122?q=80&w=320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1652540492984-c347f10fcbaf?q=80&w=320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?q=80&w=320&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ],
+  },
+];
+
+export const NavigationLinks = [
+  {
+    id: "pages",
+    label: "Pages",
+    icon: "layers",
+    isActive: true,
+    subItems: [
+      { label: "Home", href: "/", isActive: true },
+      { label: "Listing", href: "/listing" },
+      { label: "Categories", href: "/categories" },
+    ],
+  },
+  {
+    id: "sales",
+    label: "Sales",
+    icon: "percent",
+    href: "/sales",
+  },
+  {
+    id: "best-sellers",
+    label: "Best Sellers",
+    icon: "thumbs-up",
+    href: "/best-sellers",
+  },
+  {
+    id: "new-arrivals",
+    label: "New Arrivals",
+    icon: "package-plus",
+    href: "/new-arrivals",
+  },
+  {
+    id: "books",
+    label: "Books",
+    icon: "book",
+    href: "/books",
+  },
+  {
+    id: "clothing",
+    label: "Clothing",
+    icon: "shirt",
+    href: "/clothing",
+  },
+  {
+    id: "gift-cards",
+    label: "Gift Cards",
+    icon: "gift",
+    href: "/gift-cards",
+  },
+];
+
+export const HeaderActions = [
+  {
+    id: "sign-in",
+    label: "Sign in",
+    icon: "user",
+    href: "/signin",
+  },
+  {
+    id: "favorite",
+    label: "Favorite",
+    icon: "heart",
+    href: "/favorites",
+  },
+  {
+    id: "cart",
+    label: "Cart",
+    icon: "shopping-cart",
+    href: "/cart",
+    badge: 0,
+  },
+];
+
+export const Collections = [
+  {
+    id: "col_featured",
+    title: "Featured",
+    productIds: ["p_001", "p_002", "p_003"],
+    images: "",
+  },
+  {
+    id: "col_holiday_sale",
+    title: "Holiday Sales",
+    productIds: ["p_020", "p_021"],
+    images: "",
+  },
+];
+
+export const footerSections = [
+  {
+    title: "Company",
+    links: [
+      "About Preline",
+      "Affiliate & Influencer: Earn Commission",
+      "Contact us",
+      "Press",
+      "Preline's Tree Planting Program",
+    ],
+  },
+  {
+    title: "Customer service",
+    links: [
+      "Return and refund policy",
+      "Intellectual property policy",
+      "Shipping info",
+      "Report suspicious activity",
+    ],
+  },
+  {
+    title: "Help",
+    links: [
+      "Support center & FAQ",
+      "Safety center",
+      "Preline purchase protection",
+      "Sitemap",
+      "Partner with Preline",
+    ],
+  },
+];
+
+export const FeaturedProducts = [
+  {
+    id: "prod_001",
+    name: "iPhone 14 Case",
+    image:
+      "https://images.unsplash.com/photo-1680268101608-a2edbc3291f8?q=80&w=480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    price: 59,
+    originalPrice: 79,
+    currency: "USD",
+    soldCount: 200,
+    rating: 5,
+    reviewCount: 67,
+    badge: "Only 7 left",
+    url: "/product/iphone-14-case",
+  },
+  {
+    id: "prod_002",
+    name: "Charger for Apple Devices",
+    image:
+      "https://images.unsplash.com/photo-1628489479574-37a2164ea362?q=80&w=480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    price: 45,
+    originalPrice: 70,
+    currency: "USD",
+    soldCount: 2,
+    rating: 0,
+    reviewCount: 0,
+    url: "/product/apple-charger",
+  },
+  {
+    id: "prod_003",
+    name: "Apple Pencil",
+    image:
+      "https://images.unsplash.com/photo-1660820936253-f636cfc17b8b?q=80&w=329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    price: 89,
+    originalPrice: 109,
+    currency: "USD",
+    soldCount: 53,
+    rating: 5,
+    reviewCount: 29,
+    badge: "Almost sold out",
+    url: "/product/apple-pencil",
+  },
+  {
+    id: "prod_004",
+    name: "iPad Case",
+    image:
+      "https://images.unsplash.com/photo-1713492527322-471061e52516?q=80&w=480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    price: 10,
+    originalPrice: 30,
+    currency: "USD",
+    soldCount: 45,
+    rating: 4,
+    reviewCount: 3,
+    url: "/product/ipad-case",
+  },
+  {
+    id: "prod_005",
+    name: "Sony WH1000XM5 Headphones",
+    image:
+      "https://images.unsplash.com/photo-1689872072441-5aed6df99448?q=80&w=480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    price: 199,
+    originalPrice: 249,
+    currency: "USD",
+    soldCount: 106,
+    rating: 0,
+    reviewCount: 0,
+    badge: "Only 5 left",
+    url: "/product/sony-headphones",
+  },
+];
+
+export const InterestCategories = [
+  {
+    id: "recommended",
+    name: "Recommended",
+    icon: "sparkles",
+    isActive: true,
+  },
+  {
+    id: "phones",
+    name: "Phones",
+    icon: "smartphone",
+  },
+  {
+    id: "laptops",
+    name: "Laptops",
+    icon: "laptop",
+  },
+  {
+    id: "computers",
+    name: "Computers",
+    icon: "pc-case",
+  },
+  {
+    id: "tv",
+    name: "TV",
+    icon: "tv",
+  },
+  {
+    id: "tablets",
+    name: "Tablets",
+    icon: "tablet",
+  },
+  {
+    id: "office",
+    name: "Office equipment",
+    icon: "printer",
+  },
+  {
+    id: "monitor",
+    name: "Monitor",
+    icon: "monitor",
+  },
+  {
+    id: "headphones",
+    name: "Headphones",
+    icon: "headphones",
+  },
+  {
+    id: "game-consoles",
+    name: "Game Consoles",
+    icon: "gamepad-2",
+  },
+];
+
+export const ExploreProducts = [
+  {
+    id: "exp_001",
+    name: "Asus Zenbook 14",
+    image:
+      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=480&auto=format&fit=crop",
+    price: 899,
+    originalPrice: 1199,
+    currency: "USD",
+    soldCount: 156,
+    rating: 5,
+    reviewCount: 89,
+    badge: "Best Seller",
+    isFavorite: false,
+    url: "/product/asus-zenbook-14",
+  },
+  {
+    id: "exp_002",
+    name: "MacBook Pro 14",
+    image:
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=480&auto=format&fit=crop",
+    price: 1999,
+    originalPrice: 2399,
+    currency: "USD",
+    soldCount: 234,
+    rating: 5,
+    reviewCount: 142,
+    isFavorite: true,
+    url: "/product/macbook-pro-14",
+  },
+  {
+    id: "exp_003",
+    name: "Dell XPS 13",
+    image:
+      "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=480&auto=format&fit=crop",
+    price: 1299,
+    originalPrice: 1599,
+    currency: "USD",
+    soldCount: 98,
+    rating: 4,
+    reviewCount: 67,
+    badge: "20% OFF",
+    isFavorite: false,
+    url: "/product/dell-xps-13",
+  },
+  {
+    id: "exp_004",
+    name: "HP Spectre x360",
+    image:
+      "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?q=80&w=480&auto=format&fit=crop",
+    price: 1199,
+    originalPrice: 1499,
+    currency: "USD",
+    soldCount: 76,
+    rating: 4,
+    reviewCount: 45,
+    isFavorite: true,
+    url: "/product/hp-spectre-x360",
+  },
+  {
+    id: "exp_005",
+    name: "Lenovo ThinkPad X1",
+    image:
+      "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?q=80&w=480&auto=format&fit=crop",
+    price: 1399,
+    originalPrice: 1799,
+    currency: "USD",
+    soldCount: 123,
+    rating: 5,
+    reviewCount: 91,
+    badge: "Top Rated",
+    isFavorite: false,
+    url: "/product/lenovo-thinkpad-x1",
+  },
+  {
+    id: "exp_006",
+    name: "Microsoft Surface Laptop",
+    image:
+      "https://images.unsplash.com/photo-1593642632505-1ba8f18e8f8f?q=80&w=480&auto=format&fit=crop",
+    price: 999,
+    originalPrice: 1299,
+    currency: "USD",
+    soldCount: 87,
+    rating: 4,
+    reviewCount: 53,
+    isFavorite: false,
+    url: "/product/surface-laptop",
+  },
+  {
+    id: "exp_007",
+    name: "Acer Swift 3",
+    image:
+      "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=480&auto=format&fit=crop",
+    price: 699,
+    originalPrice: 899,
+    currency: "USD",
+    soldCount: 145,
+    rating: 4,
+    reviewCount: 78,
+    badge: "Great Value",
+    isFavorite: true,
+    url: "/product/acer-swift-3",
+  },
+  {
+    id: "exp_008",
+    name: "LG Gram 17",
+    image:
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=480&auto=format&fit=crop",
+    price: 1599,
+    originalPrice: 1999,
+    currency: "USD",
+    soldCount: 64,
+    rating: 5,
+    reviewCount: 41,
+    isFavorite: false,
+    url: "/product/lg-gram-17",
+  },
+  {
+    id: "exp_009",
+    name: "Razer Blade 15",
+    image:
+      "https://images.unsplash.com/photo-1603302576837-37561b2e2302?q=80&w=480&auto=format&fit=crop",
+    price: 2199,
+    originalPrice: 2599,
+    currency: "USD",
+    soldCount: 92,
+    rating: 5,
+    reviewCount: 68,
+    badge: "Gaming",
+    isFavorite: true,
+    url: "/product/razer-blade-15",
+  },
+  {
+    id: "exp_010",
+    name: "Samsung Galaxy Book",
+    image:
+      "https://images.unsplash.com/photo-1587614382346-4ec70e388b28?q=80&w=480&auto=format&fit=crop",
+    price: 849,
+    originalPrice: 1049,
+    currency: "USD",
+    soldCount: 110,
+    rating: 4,
+    reviewCount: 62,
+    isFavorite: false,
+    url: "/product/samsung-galaxy-book",
+  },
+  {
+    id: "exp_011",
+    name: "Google Pixel Tablet",
+    image:
+      "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=480&auto=format&fit=crop",
+    price: 499,
+    originalPrice: 599,
+    currency: "USD",
+    soldCount: 45,
+    rating: 4,
+    reviewCount: 28,
+    badge: "New",
+    isFavorite: true,
+    url: "/product/google-pixel-tablet",
+  },
+  {
+    id: "exp_012",
+    name: "Sonos Roam Speaker",
+    image:
+      "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?q=80&w=480&auto=format&fit=crop",
+    price: 179,
+    originalPrice: 199,
+    currency: "USD",
+    soldCount: 312,
+    rating: 5,
+    reviewCount: 156,
+    isFavorite: false,
+    url: "/product/sonos-roam",
+  },
+  {
+    id: "exp_013",
+    name: "GoPro Hero 11",
+    image:
+      "https://images.unsplash.com/photo-1565849904461-04a58ad377e0?q=80&w=480&auto=format&fit=crop",
+    price: 399,
+    originalPrice: 499,
+    currency: "USD",
+    soldCount: 89,
+    rating: 4,
+    reviewCount: 42,
+    badge: "Action",
+    isFavorite: true,
+    url: "/product/gopro-hero-11",
+  },
+  {
+    id: "exp_014",
+    name: "Kindle Paperwhite",
+    image:
+      "https://images.unsplash.com/photo-1592434134753-a70baf7979d5?q=80&w=480&auto=format&fit=crop",
+    price: 139,
+    originalPrice: 159,
+    currency: "USD",
+    soldCount: 456,
+    rating: 5,
+    reviewCount: 321,
+    badge: "Best Reader",
+    isFavorite: false,
+    url: "/product/kindle-paperwhite",
+  },
+  {
+    id: "exp_015",
+    name: "PlayStation 5 Controller",
+    image:
+      "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?q=80&w=480&auto=format&fit=crop",
+    price: 69,
+    originalPrice: 75,
+    currency: "USD",
+    soldCount: 890,
+    rating: 5,
+    reviewCount: 450,
+    isFavorite: true,
+    url: "/product/ps5-controller",
+  },
+  {
+    id: "exp_016",
+    name: "Nintendo Switch OLED",
+    image:
+      "https://images.unsplash.com/photo-1578303512597-81e6cc155b3e?q=80&w=480&auto=format&fit=crop",
+    price: 349,
+    originalPrice: 349,
+    currency: "USD",
+    soldCount: 1200,
+    rating: 5,
+    reviewCount: 890,
+    badge: "Top Console",
+    isFavorite: false,
+    url: "/product/nintendo-switch-oled",
+  },
+  {
+    id: "exp_017",
+    name: "Logitech MX Master 3S",
+    image:
+      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=480&auto=format&fit=crop",
+    price: 99,
+    originalPrice: 109,
+    currency: "USD",
+    soldCount: 340,
+    rating: 5,
+    reviewCount: 210,
+    isFavorite: true,
+    url: "/product/mx-master-3s",
+  },
+  {
+    id: "exp_018",
+    name: "Apple AirTag",
+    image:
+      "https://images.unsplash.com/photo-1633190172931-e63d3f956793?q=80&w=480&auto=format&fit=crop",
+    price: 29,
+    originalPrice: 29,
+    currency: "USD",
+    soldCount: 2340,
+    rating: 4,
+    reviewCount: 980,
+    isFavorite: false,
+    url: "/product/apple-airtag",
+  },
+  {
+    id: "exp_019",
+    name: "DJI Mini 3 Pro",
+    image:
+      "https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=480&auto=format&fit=crop",
+    price: 759,
+    originalPrice: 909,
+    currency: "USD",
+    soldCount: 67,
+    rating: 5,
+    reviewCount: 34,
+    badge: "Drone",
+    isFavorite: true,
+    url: "/product/dji-mini-3",
+  },
+  {
+    id: "exp_020",
+    name: "Nest Learning Thermostat",
+    image:
+      "https://images.unsplash.com/photo-1563459802266-bb8773952971?q=80&w=480&auto=format&fit=crop",
+    price: 199,
+    originalPrice: 249,
+    currency: "USD",
+    soldCount: 156,
+    rating: 4,
+    reviewCount: 89,
+    isFavorite: false,
+    url: "/product/nest-thermostat",
+  },
+];
+
+export const TopCategories = [
+  {
+    id: "top_cat_001",
+    name: "Phones",
+    image:
+      "https://images.unsplash.com/photo-1695048064978-8475b9f32d58?q=80&w=480&auto=format&fit=crop",
+    url: "/category/phones",
+  },
+  {
+    id: "top_cat_002",
+    name: "Computers",
+    image:
+      "https://images.unsplash.com/photo-1619953942547-233eab5a70d6?q=80&w=480&auto=format&fit=crop",
+    url: "/category/computers",
+  },
+  {
+    id: "top_cat_003",
+    name: "Laptops",
+    image:
+      "https://images.unsplash.com/photo-1639170952854-16636715af61?q=80&w=480&auto=format&fit=crop",
+    url: "/category/laptops",
+  },
+  {
+    id: "top_cat_004",
+    name: "Tablets",
+    image:
+      "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=480&auto=format&fit=crop",
+    url: "/category/tablets",
+  },
+  {
+    id: "top_cat_005",
+    name: "Headphones",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=480&auto=format&fit=crop",
+    url: "/category/headphones",
+  },
+  {
+    id: "top_cat_006",
+    name: "Cameras",
+    image:
+      "https://images.unsplash.com/photo-1606986628994-282f98d6d4dd?q=80&w=480&auto=format&fit=crop",
+    url: "/category/cameras",
+  },
+];
+
+export const NewNowCategories = [
+  {
+    id: "new_001",
+    name: "VR",
+    image:
+      "https://images.unsplash.com/photo-1657734240326-8f2ab858a2dd?q=80&w=480&auto=format&fit=crop",
+    url: "/category/vr",
+  },
+  {
+    id: "new_002",
+    name: "Speakers",
+    image:
+      "https://images.unsplash.com/photo-1600691222718-6df748561a93?q=80&w=480&auto=format&fit=crop",
+    url: "/category/speakers",
+  },
+  {
+    id: "new_003",
+    name: "Keyboards",
+    image:
+      "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?q=80&w=480&auto=format&fit=crop",
+    url: "/category/keyboards",
+  },
+  {
+    id: "new_004",
+    name: "Gaming Chairs",
+    image:
+      "https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=480&auto=format&fit=crop",
+    url: "/category/gaming-chairs",
+  },
+  {
+    id: "new_005",
+    name: "Smart Watches",
+    image:
+      "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=480&auto=format&fit=crop",
+    url: "/category/smart-watches",
+  },
+  {
+    id: "new_006",
+    name: "Webcams",
+    image:
+      "https://images.unsplash.com/photo-1624823183493-ed5832f48f18?q=80&w=480&auto=format&fit=crop",
+    url: "/category/webcams",
+  },
+];
+
+export const NewArrivals = [
+  {
+    id: "arrival_001",
+    name: "iPhone 14 Case",
+    image:
+      "https://images.unsplash.com/photo-1680268101608-a2edbc3291f8?q=80&w=480&auto=format&fit=crop",
+    price: 29,
+    currency: "USD",
+    soldCount: 245,
+    url: "/product/iphone-14-case",
+  },
+  {
+    id: "arrival_002",
+    name: "Charger for Apple Devices",
+    image:
+      "https://images.unsplash.com/photo-1628489479574-37a2164ea362?q=80&w=480&auto=format&fit=crop",
+    price: 39,
+    currency: "USD",
+    soldCount: 189,
+    url: "/product/apple-charger",
+  },
+  {
+    id: "arrival_003",
+    name: "USB-C Cable",
+    image:
+      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?q=80&w=480&auto=format&fit=crop",
+    price: 19,
+    currency: "USD",
+    soldCount: 312,
+    url: "/product/usb-c-cable",
+  },
+  {
+    id: "arrival_004",
+    name: "Wireless Mouse",
+    image:
+      "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=480&auto=format&fit=crop",
+    price: 49,
+    currency: "USD",
+    soldCount: 156,
+    url: "/product/wireless-mouse",
+  },
+  {
+    id: "arrival_005",
+    name: "Laptop Stand",
+    image:
+      "https://images.unsplash.com/photo-1625225233840-695456021cde?q=80&w=480&auto=format&fit=crop",
+    price: 59,
+    currency: "USD",
+    soldCount: 98,
+    url: "/product/laptop-stand",
+  },
+  {
+    id: "arrival_006",
+    name: "Bluetooth Adapter",
+    image:
+      "https://images.unsplash.com/photo-1625948515291-69613efd103f?q=80&w=480&auto=format&fit=crop",
+    price: 24,
+    currency: "USD",
+    soldCount: 201,
+    url: "/product/bluetooth-adapter",
+  },
+];
+
+export const Brands = [
+  {
+    id: "brand_001",
+    name: "Apple",
+    logo: "apple",
+    url: "/brands/apple",
+  },
+  {
+    id: "brand_002",
+    name: "Samsung",
+    logo: "samsung",
+    url: "/brands/samsung",
+  },
+  {
+    id: "brand_003",
+    name: "Sony",
+    logo: "sony",
+    url: "/brands/sony",
+  },
+  {
+    id: "brand_004",
+    name: "LG",
+    logo: "lg",
+    url: "/brands/lg",
+  },
+  {
+    id: "brand_005",
+    name: "Dell",
+    logo: "dell",
+    url: "/brands/dell",
+  },
+  {
+    id: "brand_006",
+    name: "HP",
+    logo: "hp",
+    url: "/brands/hp",
+  },
+];
+
+export const ListingCategories = [
+  {
+    id: "cat_001",
+    name: "Cell Phones",
+    count: 856,
+  },
+  {
+    id: "cat_002",
+    name: "Computers & Tablets",
+    count: 1203,
+  },
+  {
+    id: "cat_003",
+    name: "Cell Phone Accessories",
+    count: 2145,
+  },
+  {
+    id: "cat_004",
+    name: "Appliances",
+    count: 542,
+  },
+  {
+    id: "cat_005",
+    name: "Audio",
+    count: 320,
+  },
+  {
+    id: "cat_006",
+    name: "iPhone Accessories",
+    count: 980,
+  },
+  {
+    id: "cat_007",
+    name: "Cameras & Camcorders",
+    count: 234,
+  },
+  {
+    id: "cat_008",
+    name: "iPhone Cases & Clips",
+    count: 445,
+  },
+  {
+    id: "cat_009",
+    name: "TV & Home Theater",
+    count: 289,
+  },
+  {
+    id: "cat_010",
+    name: "Small Kitchen Appliances",
+    count: 156,
+  },
+];
+
+export const ListingBrands = [
+  { id: "br_001", name: "Apple", count: 1234 },
+  { id: "br_002", name: "Beats", count: 567 },
+  { id: "br_003", name: "Google", count: 890 },
+  { id: "br_004", name: "Xiaomi", count: 432 },
+  { id: "br_005", name: "Samsung", count: 1567 },
+  { id: "br_006", name: "LG", count: 234 },
+  { id: "br_007", name: "Sony", count: 678 },
+  { id: "br_008", name: "Bose", count: 345 },
+  { id: "br_009", name: "JBL", count: 456 },
+  { id: "br_010", name: "Anker", count: 789 },
+];
+
+export const ListingColors = [
+  { id: "col_001", name: "Black", value: "black", bgClass: "bg-black" },
+  { id: "col_002", name: "White", value: "white", bgClass: "bg-white" },
+  { id: "col_003", name: "Gray", value: "gray", bgClass: "bg-gray-300" },
+  { id: "col_004", name: "Red", value: "red", bgClass: "bg-red-500" },
+  { id: "col_005", name: "Orange", value: "orange", bgClass: "bg-orange-500" },
+  { id: "col_006", name: "Yellow", value: "yellow", bgClass: "bg-yellow-500" },
+  { id: "col_007", name: "Green", value: "green", bgClass: "bg-green-500" },
+  { id: "col_008", name: "Blue", value: "blue", bgClass: "bg-blue-500" },
+];
+
+export const ListingRatings = [
+  { id: "rate_001", stars: 4, label: "4 stars & up" },
+  { id: "rate_002", stars: 3, label: "3 stars & up" },
+  { id: "rate_003", stars: 2, label: "2 stars & up" },
+];
+
+export const ListingConditions = [
+  { id: "cond_001", name: "New", count: 3456 },
+  { id: "cond_002", name: "Open-box", count: 234 },
+  { id: "cond_003", name: "Refurbished", count: 567 },
+  { id: "cond_004", name: "Pre-owned", count: 890 },
+];
+
+export const ProductDetails = [
+  {
+    id: "apple-pencil-1st-gen",
+    slug: "apple-pencil-1st-gen",
+    name: "Apple Pencil (1st Generation): Pixel-Perfect Precision and Industry-Leading Low Latency, Perfect for Note-Taking, Drawing, and Signing documents.",
+    shortName: "Apple Pencil",
+    price: 89,
+    originalPrice: 109,
+    currency: "USD",
+    badge: "#1 Best seller",
+    badgeCategory: "in Tablets, Laptops & Accessories",
+    rating: 5,
+    reviewCount: 112,
+    articleCode: "143483901",
+    color: "White",
+    brand: "Apple",
+    material: "Aluminum",
+    inStock: true,
+    soldCount: 53,
+    breadcrumbs: [
+      { label: "Electronics", href: "/listing" },
+      { label: "Cell Phone Accessories", href: "/listing" },
+      { label: "Apple Pencil", href: "#" },
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1660820936253-f636cfc17b8b?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1660820936280-bd9c483eb54b?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1730364158831-19cc94f00424?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1594200664133-0ee987e1babf?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1547571031-4c1023b95da6?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1551962368-1abc41c65f83?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1551721434-f5a13c7a6d14?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1714859100390-7f3a57e5ae74?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1714859100409-a7d7937c21d3?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1588876315093-ce09afb34028?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ],
+    thumbnails: [
+      "https://images.unsplash.com/photo-1660820936253-f636cfc17b8b?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1660820936280-bd9c483eb54b?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1730364158831-19cc94f00424?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1594200664133-0ee987e1babf?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1547571031-4c1023b95da6?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1551962368-1abc41c65f83?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1551721434-f5a13c7a6d14?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1714859100390-7f3a57e5ae74?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1714859100409-a7d7937c21d3?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1588876315093-ce09afb34028?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ],
+    specifications: {
+      numberOfBatteries: "1 Lithium Polymer batteries required.",
+      compatibleDevices: "iPad",
+      itemDimensions: "L x W x H 0.07 x 0.35 x 0.07 inches",
+      areBatteriesIncluded: "No",
+      batteriesRequired: "No",
+      upc: "194253687870",
+      gtin: "30194253687871",
+    },
+    description: [
+      "WHY APPLE PENCIL — With pixel-perfect precision, tilt and pressure sensitivity, and imperceptible lag, Apple Pencil (1st generation) transforms into your paintbrush or your pencil. It makes painting, sketching, doodling, and note-taking better than ever.",
+      "COMPATIBILITY — Apple Pencil (1st generation) works with iPad (6th, 7th, 8th, 9th, and 10th* generation); iPad Air (3rd generation); iPad mini (5th generation); iPad Pro 12.9-inch (1st and 2nd generation); iPad Pro 10.5-inch; and iPad Pro 9.7-inch. * iPad (10th generation) requires USB-C to Apple Pencil Adapter.",
+      "EASY AND NATURAL — Apple Pencil is sensitive to pressure and tilt so you can easily vary line weight, create subtle shading, and produce a wide range of artistic effects — just like a conventional pencil, but with pixel-perfect precision.",
+    ],
+    reviews: {
+      fiveStar: 100,
+      fourStar: 10,
+      threeStar: 2,
+      twoAndBelow: 0,
+      featured: [
+        {
+          id: "rev_001",
+          author: "Christina",
+          rating: 5,
+          timeAgo: "13 hours ago",
+          content:
+            "I got my iPad back in 2017 and really wanted to love it but it has never been very useful to me. I tried attaching a Bluetooth keyboard. That made it heavy and clunky and I was never able to know how much battery life...",
+          images: [
+            "https://images.unsplash.com/photo-1621768124172-4df51cd0a95e?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1621768093035-675413ee6847?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            "https://images.unsplash.com/photo-1630453016513-bba65d503b06?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          ],
+        },
+        {
+          id: "rev_002",
+          author: "Sam",
+          rating: 5,
+          timeAgo: "5 days ago",
+          content:
+            "The Apple Pencil is amazing! Perfect for taking notes and drawing. Highly recommend for any iPad user.",
+          images: [
+            "https://images.unsplash.com/flagged/photo-1574507926668-26e97fb1041f?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          ],
+        },
+      ],
+    },
+    models: [
+      {
+        id: "model_001",
+        name: "Apple Pencil (1st Generation)",
+        price: 89,
+        isAvailable: true,
+      },
+      {
+        id: "model_002",
+        name: "Apple Pencil (2nd Generation)",
+        price: 129,
+        isAvailable: true,
+      },
+    ],
+    relatedProducts: [
+      "prod_003",
+      "prod_001",
+      "prod_002",
+      "prod_004",
+      "prod_005",
+    ],
+  },
+  {
+    id: "prod_001",
+    slug: "prod_001",
+    name: "Apple iPhone 14 Pro Max - Advanced Camera System, A16 Chip, All-Day Battery Life",
+    shortName: "iPhone 14 Pro Max",
+    price: 1099,
+    originalPrice: 1199,
+    currency: "USD",
+    badge: "Best Seller",
+    badgeCategory: "in Cell Phones & Smartphones",
+    rating: 5,
+    reviewCount: 234,
+    articleCode: "IPHONE14PM001",
+    color: "Deep Purple",
+    brand: "Apple",
+    material: "Ceramic Shield front, textured matte glass back",
+    inStock: true,
+    soldCount: 2341,
+    breadcrumbs: [
+      { label: "Electronics", href: "/listing" },
+      { label: "Cell Phones", href: "/listing" },
+      { label: "iPhone 14 Pro Max", href: "#" },
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?q=80&w=560&h=560&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1695048133098-5f3f3e3c6e1e?q=80&w=560&h=560&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1678911820864-e5c67b45c1c7?q=80&w=560&h=560&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?q=80&w=560&h=560&auto=format&fit=crop",
+    ],
+    thumbnails: [
+      "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?q=80&w=180&h=180&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1695048133098-5f3f3e3c6e1e?q=80&w=180&h=180&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1678911820864-e5c67b45c1c7?q=80&w=180&h=180&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?q=80&w=180&h=180&auto=format&fit=crop",
+    ],
+    specifications: {
+      numberOfBatteries: "1 Lithium Ion battery required (included)",
+      compatibleDevices: "5G Networks, MagSafe Accessories",
+      itemDimensions: "L x W x H 6.33 x 3.05 x 0.31 inches",
+      areBatteriesIncluded: "Yes",
+      batteriesRequired: "Yes",
+      upc: "194253687123",
+      gtin: "30194253687124",
+    },
+    description: [
+      "DYNAMIC ISLAND — Dynamic Island bubbles up alerts and Live Activities so you don't miss them while you're doing something else.",
+      "48MP MAIN CAMERA — With 2x Telephoto, you get three optical zoom levels. It's like having a third camera.",
+      "A16 BIONIC CHIP — The ultimate smartphone chip. Phenomenal performance, incredible efficiency.",
+    ],
+    reviews: {
+      fiveStar: 190,
+      fourStar: 35,
+      threeStar: 7,
+      twoAndBelow: 2,
+      featured: [
+        {
+          id: "rev_iphone_001",
+          author: "Michael Chen",
+          rating: 5,
+          timeAgo: "2 days ago",
+          content:
+            "Amazing phone! The camera quality is incredible and the battery lasts all day. Highly recommend!",
+          images: [],
+        },
+        {
+          id: "rev_iphone_002",
+          author: "Sarah Johnson",
+          rating: 5,
+          timeAgo: "1 week ago",
+          content:
+            "Best iPhone yet! The Dynamic Island is a game changer and the display is stunning.",
+          images: [],
+        },
+      ],
+    },
+    models: [
+      {
+        id: "model_iphone_128",
+        name: "iPhone 14 Pro Max (128GB)",
+        price: 1099,
+        isAvailable: true,
+      },
+      {
+        id: "model_iphone_256",
+        name: "iPhone 14 Pro Max (256GB)",
+        price: 1199,
+        isAvailable: true,
+      },
+      {
+        id: "model_iphone_512",
+        name: "iPhone 14 Pro Max (512GB)",
+        price: 1399,
+        isAvailable: true,
+      },
+    ],
+    relatedProducts: ["prod_002", "prod_003", "prod_004", "prod_005"],
+  },
+  {
+    id: "prod_002",
+    slug: "prod_002",
+    name: "Samsung Galaxy S23 Ultra - 200MP Camera, S Pen, Snapdragon 8 Gen 2",
+    shortName: "Galaxy S23 Ultra",
+    price: 999,
+    originalPrice: 1199,
+    currency: "USD",
+    badge: "Top Rated",
+    badgeCategory: "in Android Phones",
+    rating: 5,
+    reviewCount: 189,
+    articleCode: "SAMS23U001",
+    color: "Phantom Black",
+    brand: "Samsung",
+    material: "Armor Aluminum frame, Gorilla Glass Victus 2",
+    inStock: true,
+    soldCount: 1876,
+    breadcrumbs: [
+      { label: "Electronics", href: "/listing" },
+      { label: "Cell Phones", href: "/listing" },
+      { label: "Galaxy S23 Ultra", href: "#" },
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=560&h=560&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=560&h=560&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=560&h=560&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=560&h=560&auto=format&fit=crop",
+    ],
+    thumbnails: [
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=180&h=180&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=180&h=180&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=180&h=180&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=180&h=180&auto=format&fit=crop",
+    ],
+    specifications: {
+      numberOfBatteries: "1 Lithium Ion battery required (included)",
+      compatibleDevices: "5G Networks, Samsung DeX",
+      itemDimensions: "L x W x H 6.43 x 3.07 x 0.35 inches",
+      areBatteriesIncluded: "Yes",
+      batteriesRequired: "Yes",
+      upc: "887276589456",
+      gtin: "30887276589457",
+    },
+    description: [
+      "200MP CAMERA — Capture stunning photos with incredible detail and clarity with the 200MP main camera.",
+      "S PEN — Write, draw, and navigate with precision using the built-in S Pen.",
+      "SNAPDRAGON 8 GEN 2 — Desktop-level performance in a mobile device with the fastest Snapdragon processor.",
+    ],
+    reviews: {
+      fiveStar: 145,
+      fourStar: 32,
+      threeStar: 10,
+      twoAndBelow: 2,
+      featured: [
+        {
+          id: "rev_samsung_001",
+          author: "David Lee",
+          rating: 5,
+          timeAgo: "3 days ago",
+          content:
+            "The S Pen integration is fantastic! Camera quality is outstanding.",
+          images: [],
+        },
+      ],
+    },
+    models: [
+      {
+        id: "model_s23_256",
+        name: "Galaxy S23 Ultra (256GB)",
+        price: 999,
+        isAvailable: true,
+      },
+      {
+        id: "model_s23_512",
+        name: "Galaxy S23 Ultra (512GB)",
+        price: 1199,
+        isAvailable: true,
+      },
+    ],
+    relatedProducts: ["prod_001", "prod_003", "prod_004", "prod_005"],
+  },
+  {
+    id: "prod_003",
+    slug: "prod_003",
+    name: "Apple Pencil (1st Generation): Pixel-Perfect Precision",
+    shortName: "Apple Pencil",
+    price: 89,
+    originalPrice: 109,
+    currency: "USD",
+    badge: "Almost sold out",
+    badgeCategory: "in iPad Accessories",
+    rating: 5,
+    reviewCount: 29,
+    articleCode: "143483901",
+    color: "White",
+    brand: "Apple",
+    material: "Aluminum",
+    inStock: true,
+    soldCount: 53,
+    breadcrumbs: [
+      { label: "Electronics", href: "/listing" },
+      { label: "Cell Phone Accessories", href: "/listing" },
+      { label: "Apple Pencil", href: "#" },
+    ],
+    gallery: [
+      "https://images.unsplash.com/photo-1660820936253-f636cfc17b8b?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1660820936280-bd9c483eb54b?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1730364158831-19cc94f00424?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1594200664133-0ee987e1babf?q=80&w=560&h=560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ],
+    thumbnails: [
+      "https://images.unsplash.com/photo-1660820936253-f636cfc17b8b?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1660820936280-bd9c483eb54b?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1730364158831-19cc94f00424?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1594200664133-0ee987e1babf?q=80&w=180&h=180&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ],
+    specifications: {
+      numberOfBatteries: "1 Lithium Polymer batteries required.",
+      compatibleDevices: "iPad",
+      itemDimensions: "L x W x H 0.07 x 0.35 x 0.07 inches",
+      areBatteriesIncluded: "No",
+      batteriesRequired: "No",
+      upc: "194253687870",
+      gtin: "30194253687871",
+    },
+    description: [
+      "WHY APPLE PENCIL — With pixel-perfect precision, tilt and pressure sensitivity, and imperceptible lag, Apple Pencil (1st generation) transforms into your paintbrush or your pencil.",
+      "COMPATIBILITY — Works with iPad (6th, 7th, 8th, 9th, and 10th generation); iPad Air (3rd generation); iPad mini (5th generation).",
+      "EASY AND NATURAL — Apple Pencil is sensitive to pressure and tilt so you can easily vary line weight and create subtle shading.",
+    ],
+    reviews: {
+      fiveStar: 25,
+      fourStar: 3,
+      threeStar: 1,
+      twoAndBelow: 0,
+      featured: [
+        {
+          id: "rev_pencil_001",
+          author: "Emily Watson",
+          rating: 5,
+          timeAgo: "1 week ago",
+          content: "Perfect for note-taking and drawing. Very responsive!",
+          images: [],
+        },
+      ],
+    },
+    models: [
+      {
+        id: "model_pencil_1",
+        name: "Apple Pencil (1st Generation)",
+        price: 89,
+        isAvailable: true,
+      },
+      {
+        id: "model_pencil_2",
+        name: "Apple Pencil (2nd Generation)",
+        price: 129,
+        isAvailable: true,
+      },
+    ],
+    relatedProducts: ["prod_001", "prod_004", "prod_005"],
+  },
+];
+
+export const ListingProducts = [
+  {
+    id: "prod_001",
+    name: "Apple iPhone 14 Pro Max",
+    price: 1099,
+    originalPrice: 1199,
+    discount: 8,
+    rating: 4.8,
+    reviews: 234,
+    image:
+      "https://images.unsplash.com/photo-1678685888221-cda773a3dcdb?q=80&w=400&auto=format&fit=crop",
+    badge: "Best Seller",
+    isNew: false,
+    inStock: true,
+  },
+  {
+    id: "prod_002",
+    name: "Samsung Galaxy S23 Ultra",
+    price: 999,
+    originalPrice: 1199,
+    discount: 17,
+    rating: 4.7,
+    reviews: 189,
+    image:
+      "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?q=80&w=400&auto=format&fit=crop",
+    badge: null,
+    isNew: false,
+    inStock: true,
+  },
+  {
+    id: "prod_003",
+    name: "MacBook Pro 16-inch M2",
+    price: 2499,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.9,
+    reviews: 567,
+    image:
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=400&auto=format&fit=crop",
+    badge: null,
+    isNew: true,
+    inStock: true,
+  },
+  {
+    id: "prod_004",
+    name: "Sony WH-1000XM5 Headphones",
+    price: 349,
+    originalPrice: 399,
+    discount: 13,
+    rating: 4.9,
+    reviews: 892,
+    image:
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b?q=80&w=400&auto=format&fit=crop",
+    badge: "Best Seller",
+    isNew: false,
+    inStock: true,
+  },
+  {
+    id: "prod_005",
+    name: "iPad Air 5th Generation",
+    price: 599,
+    originalPrice: 649,
+    discount: 8,
+    rating: 4.6,
+    reviews: 345,
+    image:
+      "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?q=80&w=400&auto=format&fit=crop",
+    badge: null,
+    isNew: false,
+    inStock: true,
+  },
+  {
+    id: "prod_006",
+    name: "Apple Watch Series 9",
+    price: 429,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.8,
+    reviews: 456,
+    image:
+      "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?q=80&w=400&auto=format&fit=crop",
+    badge: null,
+    isNew: true,
+    inStock: true,
+  },
+  {
+    id: "prod_007",
+    name: "Dell XPS 13 Laptop",
+    price: 1299,
+    originalPrice: 1499,
+    discount: 13,
+    rating: 4.5,
+    reviews: 234,
+    image:
+      "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=400&auto=format&fit=crop",
+    badge: null,
+    isNew: false,
+    inStock: true,
+  },
+  {
+    id: "prod_008",
+    name: "AirPods Pro 2nd Gen",
+    price: 249,
+    originalPrice: null,
+    discount: 0,
+    rating: 4.7,
+    reviews: 678,
+    image:
+      "https://images.unsplash.com/photo-1606841837239-c5a1a4a07af7?q=80&w=400&auto=format&fit=crop",
+    badge: "Best Seller",
+    isNew: false,
+    inStock: true,
+  },
+  {
+    id: "prod_009",
+    name: "Samsung 55-inch QLED 4K TV",
+    price: 799,
+    originalPrice: 999,
+    discount: 20,
+    rating: 4.6,
+    reviews: 289,
+    image:
+      "https://images.unsplash.com/photo-1593784991095-a205069470b6?q=80&w=400&auto=format&fit=crop",
+    badge: null,
+    isNew: false,
+    inStock: true,
+  },
+  {
+    id: "prod_010",
+    name: "Bose QuietComfort Earbuds",
+    price: 279,
+    originalPrice: 299,
+    discount: 7,
+    rating: 4.5,
+    reviews: 445,
+    image:
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?q=80&w=400&auto=format&fit=crop",
+    badge: null,
+    isNew: false,
+    inStock: true,
+  },
+  {
+    id: "prod_011",
+    name: "Google Pixel 8 Pro",
+    price: 899,
+    originalPrice: 999,
+    discount: 10,
+    rating: 4.7,
+    reviews: 156,
+    image:
+      "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=400&auto=format&fit=crop",
+    badge: null,
+    isNew: true,
+    inStock: true,
+  },
+  {
+    id: "prod_012",
+    name: "LG UltraGear Gaming Monitor",
+    price: 449,
+    originalPrice: 549,
+    discount: 18,
+    rating: 4.8,
+    reviews: 321,
+    image:
+      "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?q=80&w=400&auto=format&fit=crop",
+    badge: null,
+    isNew: false,
+    inStock: true,
+  },
+];
