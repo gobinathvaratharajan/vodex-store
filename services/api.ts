@@ -1,24 +1,5 @@
-import {
-  Categories,
-  Banners,
-  FeaturedProducts,
-  ExploreProducts,
-  NewArrivals,
-  ListingProducts,
-  TopCategories,
-  NewNowCategories,
-  Brands,
-  ListingCategories,
-  ListingBrands,
-  ListingColors,
-  ListingRatings,
-  ListingConditions,
-  NavigationLinks,
-  HeaderActions,
-  footerSections,
-  InterestCategories,
-  ProductDetails,
-} from "@/__mocksData__/mockDataSet";
+import axios from "axios";
+import { setupMockAdapter } from "./mockAdapter";
 import {
   Category,
   Banner,
@@ -29,254 +10,250 @@ import {
   FooterSection,
 } from "@/types";
 
-const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+// Create Axios instance
+const axiosInstance = axios.create({
+  baseURL: "/api",
+  timeout: 5000,
+});
 
-/**
- * Generic function to fetch all items from a data source
- */
-const fetchAll = async <T>(dataSource: T[]): Promise<T[]> => {
-  await delay(500);
-  return dataSource;
-};
+// Setup Mock Adapter (Simulating Backend)
+setupMockAdapter(axiosInstance);
 
-/**
- * Generic function to fetch a single item by ID
- */
-const fetchById = async <T extends { id: string }>(
-  dataSource: T[],
-  id: string
-): Promise<T | null> => {
-  await delay(500);
-  const item = dataSource.find((item) => item.id === id);
-  return item || null;
-};
-
-/**
- * Generic function to fetch multiple items by IDs
- */
-const fetchByIds = async <T extends { id: string }>(
-  dataSource: T[],
-  ids: string[]
-): Promise<T[]> => {
-  await delay(500);
-  return dataSource.filter((item) => ids.includes(item.id));
-};
-
-/**
- * Generic function to fetch items with pagination
- */
-const fetchPaginated = async <T>(
-  dataSource: T[],
-  page: number = 1,
-  limit: number = 10
-): Promise<{ data: T[]; total: number; page: number; limit: number }> => {
-  await delay(500);
-  const startIndex = (page - 1) * limit;
-  const endIndex = startIndex + limit;
-  const paginatedData = dataSource.slice(startIndex, endIndex);
-
-  return {
-    data: paginatedData,
-    total: dataSource.length,
-    page,
-    limit,
-  };
-};
-
-/**
- * Generic function to search items by name or property
- */
-const searchItems = async <T extends Record<string, any>>(
-  dataSource: T[],
-  searchTerm: string,
-  searchKey: keyof T = "name" as keyof T
-): Promise<T[]> => {
-  await delay(500);
-  const lowerSearchTerm = searchTerm.toLowerCase();
-  return dataSource.filter((item) =>
-    String(item[searchKey]).toLowerCase().includes(lowerSearchTerm)
-  );
+// Generic API Helpers
+const get = async <T>(url: string): Promise<T> => {
+  const response = await axiosInstance.get<T>(url);
+  return response.data;
 };
 
 export const api = {
   // Categories
   categories: {
-    getAll: async (): Promise<Category[]> => fetchAll(Categories),
-    getById: async (id: string): Promise<Category | null> =>
-      fetchById(Categories, id),
-    getByIds: async (ids: string[]): Promise<Category[]> =>
-      fetchByIds(Categories, ids),
-    search: async (searchTerm: string): Promise<Category[]> =>
-      searchItems(Categories, searchTerm, "name"),
+    getAll: () => get<Category[]>("/categories"),
+    getById: (id: string) => get<Category>(`/categories/${id}`),
+    // For getByIds, we simulate it by filtering on client for now or adding a mock that accepts params
+    getByIds: async (ids: string[]) => {
+      const all = await get<Category[]>("/categories");
+      return all.filter((c) => ids.includes(c.id));
+    },
+    search: async (searchTerm: string) => {
+      const all = await get<Category[]>("/categories");
+      return all.filter((c) =>
+        c.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    },
   },
 
   // Banners
   banners: {
-    getAll: async (): Promise<Banner[]> => fetchAll(Banners),
-    getById: async (id: string): Promise<Banner | null> =>
-      fetchById(Banners, id),
-    getByIds: async (ids: string[]): Promise<Banner[]> =>
-      fetchByIds(Banners, ids),
+    getAll: () => get<Banner[]>("/banners"),
+    getById: (id: string) => get<Banner>(`/banners/${id}`),
+    getByIds: async (ids: string[]) => {
+      const all = await get<Banner[]>("/banners");
+      return all.filter((b) => ids.includes(b.id));
+    },
   },
 
   // Products
   products: {
-    getFeatured: async (): Promise<Product[]> => fetchAll(FeaturedProducts),
-    getExplore: async (): Promise<Product[]> => fetchAll(ExploreProducts),
-    getNewArrivals: async (): Promise<Product[]> => fetchAll(NewArrivals),
-    getListing: async (): Promise<Product[]> => fetchAll(ListingProducts),
-    getById: async (id: string): Promise<Product | null> =>
-      fetchById(ListingProducts, id),
-    getByIds: async (ids: string[]): Promise<Product[]> =>
-      fetchByIds(ListingProducts, ids),
-    search: async (searchTerm: string): Promise<Product[]> =>
-      searchItems(ListingProducts, searchTerm, "name"),
-    getPaginated: async (page: number = 1, limit: number = 12) =>
-      fetchPaginated(ListingProducts, page, limit),
-    getDetailBySlug: async (slug: string): Promise<any | null> => {
-      await delay(500);
-      console.log("API: Searching for product with slug:", slug);
-      console.log("API: Available products:", ProductDetails.map((p: any) => ({ id: p.id, slug: p.slug })));
-      const product = ProductDetails.find((p: any) => p.slug === slug);
-      console.log("API: Found product:", product ? product.name : "Not found");
-      return product || null;
+    getFeatured: () => get<Product[]>("/products/featured"),
+    getExplore: () => get<Product[]>("/products/explore"),
+    getNewArrivals: () => get<Product[]>("/products/new-arrivals"),
+    getListing: () => get<Product[]>("/products/listing"),
+    getById: (id: string) => get<Product>(`/products/${id}`),
+    getByIds: async (ids: string[]) => {
+      const all = await get<Product[]>("/products/listing");
+      return all.filter((p) => ids.includes(p.id));
     },
-    getDetailById: async (id: string): Promise<any | null> =>
-      fetchById(ProductDetails as any, id),
-    getRelatedProducts: async (productIds: string[]): Promise<Product[]> =>
-      fetchByIds(ListingProducts, productIds),
+    search: async (searchTerm: string) => {
+      const all = await get<Product[]>("/products/listing");
+      return all.filter((p) =>
+        p.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    },
+    getPaginated: async (page: number = 1, limit: number = 12) => {
+      const all = await get<Product[]>("/products/listing");
+      const start = (page - 1) * limit;
+      return {
+        data: all.slice(start, start + limit),
+        total: all.length,
+        page,
+        limit,
+      };
+    },
+    getDetailBySlug: async (slug: string) => {
+      try {
+        const response = await axiosInstance.get(`/products/detail/${slug}`);
+        return response.data;
+      } catch {
+        return null;
+      }
+    },
+    getDetailById: async (id: string) => {
+      try {
+        const response = await axiosInstance.get(`/products/detail/${id}`);
+        return response.data;
+      } catch {
+        return null;
+      }
+    },
+    getRelatedProducts: async (productIds: string[]) => {
+      const all = await get<Product[]>("/products/listing");
+      return all.filter((p) => productIds.includes(p.id));
+    },
   },
 
   // Top Categories
   topCategories: {
-    getAll: async (): Promise<Category[]> =>
-      fetchAll(TopCategories as unknown as Category[]),
-    getById: async (id: string): Promise<Category | null> =>
-      fetchById(TopCategories as unknown as Category[], id),
+    getAll: () => get<Category[]>("/categories/top"),
+    getById: async (id: string) => {
+      // Mocking specific ID fetch for simplicity finding in array
+      const all = await get<Category[]>("/categories/top");
+      return all.find((c) => c.id === id) || null;
+    },
   },
 
   // New Now Categories
   newNowCategories: {
-    getAll: async (): Promise<Category[]> =>
-      fetchAll(NewNowCategories as unknown as Category[]),
-    getById: async (id: string): Promise<Category | null> =>
-      fetchById(NewNowCategories as unknown as Category[], id),
+    getAll: () => get<Category[]>("/categories/new-now"),
+    getById: async (id: string) => {
+      const all = await get<Category[]>("/categories/new-now");
+      return all.find((c) => c.id === id) || null;
+    },
   },
 
   // Brands
   brands: {
-    getAll: async (): Promise<Brand[]> => fetchAll(Brands),
-    getById: async (id: string): Promise<Brand | null> =>
-      fetchById(Brands, id),
-    search: async (searchTerm: string): Promise<Brand[]> =>
-      searchItems(Brands, searchTerm, "name"),
+    getAll: () => get<Brand[]>("/brands"),
+    getById: async (id: string) => {
+      const all = await get<Brand[]>("/brands");
+      return all.find((b) => b.id === id) || null;
+    },
+    search: async (searchTerm: string) => {
+      const all = await get<Brand[]>("/brands");
+      return all.filter((b) =>
+        b.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    },
   },
 
   // Listing Metadata
   listingMetadata: {
     getAll: async () => {
-      await delay(500);
-      return {
-        categories: ListingCategories,
-        brands: ListingBrands,
-        colors: ListingColors,
-        ratings: ListingRatings,
-        conditions: ListingConditions,
-      };
+      const [categories, brands, colors, ratings, conditions] = await Promise.all([
+        get<any[]>("/metadata/categories"),
+        get<any[]>("/metadata/brands"),
+        get<any[]>("/metadata/colors"),
+        get<any[]>("/metadata/ratings"),
+        get<any[]>("/metadata/conditions"),
+      ]);
+      return { categories, brands, colors, ratings, conditions };
     },
-    getCategories: async () => fetchAll(ListingCategories),
-    getCategoryById: async (id: string) =>
-      fetchById(ListingCategories, id),
-    getBrands: async () => fetchAll(ListingBrands),
-    getBrandById: async (id: string) => fetchById(ListingBrands, id),
-    getColors: async () => fetchAll(ListingColors),
-    getColorById: async (id: string) => fetchById(ListingColors, id),
-    getRatings: async () => fetchAll(ListingRatings),
-    getRatingById: async (id: string) => fetchById(ListingRatings, id),
-    getConditions: async () => fetchAll(ListingConditions),
-    getConditionById: async (id: string) =>
-      fetchById(ListingConditions, id),
+    getCategories: () => get<any[]>("/metadata/categories"),
+    getCategoryById: async (id: string) => {
+      const all = await get<any[]>("/metadata/categories");
+      return all.find((i) => i.id === id) || null;
+    },
+    getBrands: () => get<any[]>("/metadata/brands"),
+    getBrandById: async (id: string) => {
+      const all = await get<any[]>("/metadata/brands");
+      return all.find((i) => i.id === id) || null;
+    },
+    getColors: () => get<any[]>("/metadata/colors"),
+    getColorById: async (id: string) => {
+      const all = await get<any[]>("/metadata/colors");
+      return all.find((i) => i.id === id) || null;
+    },
+    getRatings: () => get<any[]>("/metadata/ratings"),
+    getRatingById: async (id: string) => {
+      const all = await get<any[]>("/metadata/ratings");
+      return all.find((i) => i.id === id) || null;
+    },
+    getConditions: () => get<any[]>("/metadata/conditions"),
+    getConditionById: async (id: string) => {
+      const all = await get<any[]>("/metadata/conditions");
+      return all.find((i) => i.id === id) || null;
+    },
   },
 
   // Navigation
   navigation: {
-    getLinks: async (): Promise<NavigationLink[]> =>
-      fetchAll(NavigationLinks),
-    getLinkById: async (id: string): Promise<NavigationLink | null> =>
-      fetchById(NavigationLinks, id),
+    getLinks: () => get<NavigationLink[]>("/navigation"),
+    getLinkById: async (id: string) => {
+      const all = await get<NavigationLink[]>("/navigation");
+      return all.find((n) => n.id === id) || null;
+    },
   },
 
   // Header Actions
   headerActions: {
-    getAll: async (): Promise<HeaderAction[]> => fetchAll(HeaderActions),
-    getById: async (id: string): Promise<HeaderAction | null> =>
-      fetchById(HeaderActions, id),
+    getAll: () => get<HeaderAction[]>("/header-actions"),
+    getById: async (id: string) => {
+      const all = await get<HeaderAction[]>("/header-actions");
+      return all.find((h) => h.id === id) || null;
+    },
   },
 
   // Footer
   footer: {
-    getSections: async (): Promise<FooterSection[]> =>
-      fetchAll(footerSections),
+    getSections: () => get<FooterSection[]>("/footer-sections"),
   },
 
   // Interest Categories
   interestCategories: {
-    getAll: async (): Promise<Category[]> => fetchAll(InterestCategories),
-    getById: async (id: string): Promise<Category | null> =>
-      fetchById(InterestCategories, id),
-    getActive: async (): Promise<Category | null> => {
-      await delay(500);
-      const active = InterestCategories.find((cat: any) => cat.isActive);
-      return active || null;
+    getAll: () => get<Category[]>("/categories/interest"),
+    getById: async (id: string) => {
+      const all = await get<Category[]>("/categories/interest");
+      return all.find((c) => c.id === id) || null;
+    },
+    getActive: async () => {
+      const all = await get<any[]>("/categories/interest");
+      return all.find((c) => c.isActive) || null;
     },
   },
 
-  // Legacy compatibility methods (deprecated)
-  getCategories: async (): Promise<Category[]> => fetchAll(Categories),
-  getBanners: async (): Promise<Banner[]> => fetchAll(Banners),
-  getFeaturedProducts: async (): Promise<Product[]> =>
-    fetchAll(FeaturedProducts),
-  getExploreProducts: async (): Promise<Product[]> =>
-    fetchAll(ExploreProducts),
-  getNewArrivals: async (): Promise<Product[]> => fetchAll(NewArrivals),
-  getListingProducts: async (): Promise<Product[]> =>
-    fetchAll(ListingProducts),
-  getTopCategories: async (): Promise<Category[]> =>
-    fetchAll(TopCategories as unknown as Category[]),
-  getNewNowCategories: async (): Promise<Category[]> =>
-    fetchAll(NewNowCategories as unknown as Category[]),
-  getBrands: async (): Promise<Brand[]> => fetchAll(Brands),
+  // Legacy compatibility methods
+  getCategories: () => get<Category[]>("/categories"),
+  getBanners: () => get<Banner[]>("/banners"),
+  getFeaturedProducts: () => get<Product[]>("/products/featured"),
+  getExploreProducts: () => get<Product[]>("/products/explore"),
+  getNewArrivals: () => get<Product[]>("/products/new-arrivals"),
+  getListingProducts: () => get<Product[]>("/products/listing"),
+  getTopCategories: () => get<Category[]>("/categories/top"),
+  getNewNowCategories: () => get<Category[]>("/categories/new-now"),
+  getBrands: () => get<Brand[]>("/brands"),
   getListingMetaData: async () => {
-    await delay(500);
-    return {
-      categories: ListingCategories,
-      brands: ListingBrands,
-      colors: ListingColors,
-      ratings: ListingRatings,
-      conditions: ListingConditions,
-    };
+    const [categories, brands, colors, ratings, conditions] = await Promise.all([
+      get<any[]>("/metadata/categories"),
+      get<any[]>("/metadata/brands"),
+      get<any[]>("/metadata/colors"),
+      get<any[]>("/metadata/ratings"),
+      get<any[]>("/metadata/conditions"),
+    ]);
+    return { categories, brands, colors, ratings, conditions };
   },
-  getNavigationLinks: async (): Promise<NavigationLink[]> =>
-    fetchAll(NavigationLinks),
-  getHeaderActions: async (): Promise<HeaderAction[]> =>
-    fetchAll(HeaderActions),
-  getFooterSections: async (): Promise<FooterSection[]> =>
-    fetchAll(footerSections),
-  getInterestCategories: async (): Promise<Category[]> =>
-    fetchAll(InterestCategories),
+  getNavigationLinks: () => get<NavigationLink[]>("/navigation"),
+  getHeaderActions: () => get<HeaderAction[]>("/header-actions"),
+  getFooterSections: () => get<FooterSection[]>("/footer-sections"),
+  getInterestCategories: () => get<Category[]>("/categories/interest"),
 };
 
-// Named exports for direct imports
-export const getDetailBySlug = async (slug: string): Promise<any | null> => {
-  await delay(500);
-  console.log("API: Searching for product with slug:", slug);
-  console.log("API: Available products:", ProductDetails.map((p: any) => ({ id: p.id, slug: p.slug })));
-  const product = ProductDetails.find((p: any) => p.slug === slug);
-  console.log("API: Found product:", product ? product.name : "Not found");
-  return product || null;
+// Named exports
+export const getDetailBySlug = async (slug: string) => {
+  try {
+    const response = await axiosInstance.get(`/products/detail/${slug}`);
+    return response.data;
+  } catch {
+    return null;
+  }
 };
 
-export const getRelatedProducts = async (category: string, excludeId: string): Promise<any[]> => {
-  await delay(500);
-  return ProductDetails.filter((p: any) => p.category === category && p.id !== excludeId).slice(0, 4);
+export const getRelatedProducts = async (category: string, excludeId: string) => {
+  try {
+    const all = await get<any[]>("/products/listing");
+    // Also include details for related if needed, but listing products are usually enough
+    // For now, filtering the mock list which we fetched via axios
+    return all.filter((p: any) => p.category === category && p.id !== excludeId).slice(0, 4);
+  } catch {
+    return [];
+  }
 };

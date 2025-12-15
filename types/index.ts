@@ -160,15 +160,3 @@ export interface ProductDetails {
   }>;
   relatedProducts: string[];
 }
-
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  originalPrice?: number;
-  image: string;
-  rating: number;
-  reviews: number;
-  badge?: string;
-  inStock: boolean;
-}

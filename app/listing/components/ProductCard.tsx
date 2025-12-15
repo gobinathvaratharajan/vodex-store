@@ -81,7 +81,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
           <div className="mt-1 flex items-center gap-1">
             {renderStars(product.rating || 0)}
-            <span className="text-xs text-gray-500">({product.reviews})</span>
+            <span className="text-xs text-gray-500">({product.reviewCount || 0})</span>
           </div>
 
           <div className="mt-2 flex items-center gap-2">

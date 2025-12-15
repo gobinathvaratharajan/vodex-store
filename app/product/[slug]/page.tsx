@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { getDetailBySlug, getRelatedProducts } from '@/services/api';
-import { ProductDetails } from '@/__mocksData__/mockDataSet';
+import { ProductDetails } from '@/types';
 import {
   StarIcon,
   CheckCircleIcon,

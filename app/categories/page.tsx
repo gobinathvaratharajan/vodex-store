@@ -152,7 +152,7 @@ export default function CategoryPage() {
                       <div className="relative shrink-0 h-64 sm:h-72 w-full">
                         <Image
                           className="size-full absolute inset-0 object-cover object-center bg-gray-100 rounded-lg dark:bg-neutral-800"
-                          src={category.image}
+                          src={category.image || ""}
                           alt={category.name}
                           width={320}
                           height={288}
