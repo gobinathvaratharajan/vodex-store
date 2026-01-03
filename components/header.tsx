@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {
-  Search,
   User,
   Heart,
   ShoppingCart,
@@ -14,19 +13,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useSelector, useDispatch } from "react-redux";
-import { RootState, AppDispatch } from "@/store";
-import { setSearchQuery } from "@/store/slices/dataSlice";
+import { useSelector } from "react-redux";
+import { RootState } from "@/store";
+import { SearchInput } from "@/components/SearchInput";
 
 export function Header() {
-  const dispatch = useDispatch<AppDispatch>();
-  const { navigationLinks, headerActions, cartItems, favoriteProductIds, searchQuery } = useSelector(
+  const { navigationLinks, headerActions, cartItems, favoriteProductIds } = useSelector(
     (state: RootState) => state.data
   );
-
-  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(setSearchQuery(e.target.value));
-  };
 
   return (
     <header className="flex flex-col lg:flex-nowrap z-50 bg-white dark:bg-neutral-900">
@@ -47,23 +41,7 @@ export function Header() {
           <div className="md:grow order-2">
             <div className="relative flex basis-full items-center gap-x-1 md:gap-x-3">
               <div className="hidden md:block w-full">
-                <div className="relative w-full">
-                  <input
-                    type="text"
-                    value={searchQuery}
-                    onChange={handleSearchChange}
-                    className="py-1.5 ps-4 sm:py-2.5 pe-10 block w-full bg-white border border-gray-200 text-base sm:text-sm rounded-full focus:outline-none focus:border-emerald-500 focus:ring-emerald-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder:text-neutral-400"
-                    placeholder="Search products..."
-                  />
-                  <div className="absolute inset-y-0 end-0 z-10 flex items-center pe-1 sm:pe-1.5">
-                    <button
-                      type="button"
-                      className="inline-flex shrink-0 justify-center items-center w-10 h-8 rounded-full bg-emerald-600 text-white hover:bg-emerald-700 focus:outline-none focus:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 dark:focus:bg-emerald-600"
-                    >
-                      <Search className="shrink-0 size-4" />
-                    </button>
-                  </div>
-                </div>
+                <SearchInput />
               </div>
             </div>
           </div>
@@ -106,23 +84,7 @@ export function Header() {
         </div>
 
         <div className="md:hidden mt-2.5 md:mt-0 w-full">
-          <div className="relative w-full">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              className="py-1.5 ps-4 sm:py-2.5 pe-10 block w-full bg-white border border-gray-200 text-base sm:text-sm rounded-full focus:outline-none focus:border-emerald-600 focus:ring-emerald-600 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder:text-neutral-400"
-              placeholder="Search products..."
-            />
-            <div className="absolute inset-y-0 end-0 z-10 flex items-center pe-1 sm:pe-1.5">
-              <button
-                type="button"
-                className="inline-flex shrink-0 justify-center items-center w-10 h-8 rounded-full bg-emerald-600 text-white hover:bg-emerald-700 focus:outline-none focus:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 dark:focus:bg-emerald-600"
-              >
-                <Search className="shrink-0 size-4" />
-              </button>
-            </div>
-          </div>
+          <SearchInput />
         </div>
       </div>
 

@@ -34,7 +34,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     <div className="h-full flex flex-col">
       <div className="group relative">
         <div className="relative">
-          <Link href={`/product/${product.id}`}>
+          <Link href={`/product/${product.slug || product.id}`}>
             <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100">
               <Image
                 src={product.image}
@@ -73,7 +73,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <div className="mt-auto pt-3">
-          <Link href={`/product/${product.id}`}>
+          <Link href={`/product/${product.slug || product.id}`}>
             <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200 line-clamp-2">
               {product.name}
             </h3>

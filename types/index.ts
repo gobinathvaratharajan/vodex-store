@@ -57,6 +57,7 @@ export interface Product {
   rating?: number;
   reviewCount?: number; // or reviews
   badge?: string | null;
+  slug?: string;
   url?: string;
   isFavorite?: boolean;
   discount?: number;
@@ -109,6 +110,7 @@ export interface CartItem extends Product {
 
 export interface ProductDetails {
   id: string;
+  image?: string;
   slug: string;
   name: string;
   shortName: string;

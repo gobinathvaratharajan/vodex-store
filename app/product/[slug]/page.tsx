@@ -139,7 +139,12 @@ export default function ProductPage({ params }: ProductPageProps) {
               {/* Preview */}
               <div className="relative group grow overflow-hidden h-[550px] sm:h-[700px] order-1 sm:order-2 bg-gray-100 rounded-lg dark:bg-neutral-800">
                 <Image
-                  src={product.gallery?.[selectedImage] || product.gallery?.[0] || ''}
+                  src={
+                    product.gallery?.[selectedImage] ||
+                    product.gallery?.[0] ||
+                    product.image ||
+                    'https://images.unsplash.com/photo-1560393464-5c69a73c5770?q=80&w=480&auto=format&fit=crop' // Fallback image
+                  }
                   alt={product.name}
                   fill
                   className="bg-gray-100 object-cover rounded-lg dark:bg-neutral-800"
@@ -385,7 +390,7 @@ export default function ProductPage({ params }: ProductPageProps) {
           {/* Header */}
           <div className="mb-4 flex flex-wrap justify-between items-center gap-3">
             <h2 className="font-medium text-xl text-gray-800 dark:text-neutral-200">
-              Explore your Interests
+              Related Products
             </h2>
             <a
               href="/listing"
@@ -403,14 +408,19 @@ export default function ProductPage({ params }: ProductPageProps) {
               <div key={relatedProduct.id} className="h-full flex flex-col">
                 <div className="group relative">
                   <div className="relative h-60 overflow-hidden bg-gray-100 rounded-lg dark:bg-neutral-800">
-                    <a href={`/product/${relatedProduct.slug}`}>
-                      <Image
-                        src={relatedProduct.gallery?.[0] || relatedProduct.thumbnails?.[0] || ''}
-                        alt={relatedProduct.name}
-                        fill
-                        className="size-full absolute top-0 start-0 object-cover rounded-lg group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </a>
+                      <a href={`/product/${relatedProduct.slug || relatedProduct.id}`}>
+                        <Image
+                          src={
+                            relatedProduct.gallery?.[0] ||
+                            relatedProduct.thumbnails?.[0] ||
+                            relatedProduct.image ||
+                            'https://images.unsplash.com/photo-1560393464-5c69a73c5770?q=80&w=480&auto=format&fit=crop'
+                          }
+                          alt={relatedProduct.name}
+                          fill
+                          className="size-full absolute top-0 start-0 object-cover rounded-lg group-hover:scale-105 transition-transform duration-500"
+                        />
+                      </a>
                     <button
                       type="button"
                       className="absolute top-2 end-2 inline-flex justify-center items-center size-8 text-gray-800 bg-white rounded-full shadow-sm opacity-0 group-hover:opacity-100 transition-opacity hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 dark:bg-neutral-800 dark:text-neutral-200 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
@@ -449,17 +459,17 @@ export default function ProductPage({ params }: ProductPageProps) {
           {/* End Grid */}
         </div>
       )}
-      <ExploreInterest />
+      {/* <ExploreInterest /> */}
 
       {/* Explore Interests */}
-      <div className="py-6 w-full max-w-340 px-4 sm:px-6 lg:px-8 mx-auto">
+      {/* <div className="py-6 w-full max-w-340 px-4 sm:px-6 lg:px-8 mx-auto">
         <div className="mb-4">
           <h2 className="font-medium text-lg text-gray-800 dark:text-neutral-200">
             Explore more
           </h2>
         </div>
           <Feature />
-      </div>
+      </div> */}
     </div>
   );
 }

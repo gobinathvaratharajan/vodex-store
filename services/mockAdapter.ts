@@ -67,15 +67,24 @@ export const setupMockAdapter = (axiosInstance: AxiosInstance) => {
 
   mock.onGet(new RegExp("/products/detail/.+")).reply((config) => {
     const id = config.url?.split("/").pop();
-    const item = [...ListingProducts, ...ProductDetails].find(
-      (p: any) => p.id === id || p.slug === id
-    );
+    const item = [
+      ...ListingProducts,
+      ...ProductDetails,
+      ...FeaturedProducts,
+      ...ExploreProducts,
+      ...NewArrivals,
+    ].find((p: any) => p.id === id || p.slug === id);
     return item ? [200, item] : [404, { message: "Product not found" }];
   });
 
   mock.onGet(new RegExp("/products/.+")).reply((config) => {
     const id = config.url?.split("/").pop();
-    const item = ListingProducts.find((p) => p.id === id);
+    const item = [
+      ...ListingProducts,
+      ...FeaturedProducts,
+      ...ExploreProducts,
+      ...NewArrivals,
+    ].find((p: any) => p.id === id);
     return item ? [200, item] : [404, { message: "Product not found" }];
   });
 };

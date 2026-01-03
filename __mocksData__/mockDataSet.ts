@@ -185,8 +185,9 @@ export const footerSections = [
 
 export const FeaturedProducts = [
   {
-    id: "prod_001",
+    id: "feat_001",
     name: "iPhone 14 Case",
+    slug: "iphone-14-case",
     image:
       "https://images.unsplash.com/photo-1680268101608-a2edbc3291f8?q=80&w=480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: 59,
@@ -199,8 +200,9 @@ export const FeaturedProducts = [
     url: "/product/iphone-14-case",
   },
   {
-    id: "prod_002",
+    id: "feat_002",
     name: "Charger for Apple Devices",
+    slug: "apple-charger",
     image:
       "https://images.unsplash.com/photo-1628489479574-37a2164ea362?q=80&w=480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: 45,
@@ -212,8 +214,9 @@ export const FeaturedProducts = [
     url: "/product/apple-charger",
   },
   {
-    id: "prod_003",
+    id: "feat_003",
     name: "Apple Pencil",
+    slug: "apple-pencil",
     image:
       "https://images.unsplash.com/photo-1660820936253-f636cfc17b8b?q=80&w=329&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: 89,
@@ -226,8 +229,9 @@ export const FeaturedProducts = [
     url: "/product/apple-pencil",
   },
   {
-    id: "prod_004",
+    id: "feat_004",
     name: "iPad Case",
+    slug: "ipad-case",
     image:
       "https://images.unsplash.com/photo-1713492527322-471061e52516?q=80&w=480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: 10,
@@ -239,8 +243,9 @@ export const FeaturedProducts = [
     url: "/product/ipad-case",
   },
   {
-    id: "prod_005",
+    id: "feat_005",
     name: "Sony WH1000XM5 Headphones",
+    slug: "sony-headphones",
     image:
       "https://images.unsplash.com/photo-1689872072441-5aed6df99448?q=80&w=480&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: 199,
@@ -573,6 +578,7 @@ export const ExploreProducts = [
   {
     id: "exp_019",
     name: "DJI Mini 3 Pro",
+    slug: "dji-mini-3",
     image:
       "https://images.unsplash.com/photo-1473968512647-3e447244af8f?q=80&w=480&auto=format&fit=crop",
     price: 759,
@@ -588,6 +594,7 @@ export const ExploreProducts = [
   {
     id: "exp_020",
     name: "Nest Learning Thermostat",
+    slug: "nest-thermostat",
     image:
       "https://images.unsplash.com/photo-1563459802266-bb8773952971?q=80&w=480&auto=format&fit=crop",
     price: 199,
@@ -695,6 +702,7 @@ export const NewArrivals = [
   {
     id: "arrival_001",
     name: "iPhone 14 Case",
+    slug: "iphone-14-case",
     image:
       "https://images.unsplash.com/photo-1680268101608-a2edbc3291f8?q=80&w=480&auto=format&fit=crop",
     price: 29,
@@ -705,6 +713,7 @@ export const NewArrivals = [
   {
     id: "arrival_002",
     name: "Charger for Apple Devices",
+    slug: "apple-charger",
     image:
       "https://images.unsplash.com/photo-1628489479574-37a2164ea362?q=80&w=480&auto=format&fit=crop",
     price: 39,
@@ -715,6 +724,7 @@ export const NewArrivals = [
   {
     id: "arrival_003",
     name: "USB-C Cable",
+    slug: "usb-c-cable",
     image:
       "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?q=80&w=480&auto=format&fit=crop",
     price: 19,
@@ -725,6 +735,7 @@ export const NewArrivals = [
   {
     id: "arrival_004",
     name: "Wireless Mouse",
+    slug: "wireless-mouse",
     image:
       "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?q=80&w=480&auto=format&fit=crop",
     price: 49,
@@ -735,6 +746,7 @@ export const NewArrivals = [
   {
     id: "arrival_005",
     name: "Laptop Stand",
+    slug: "laptop-stand",
     image:
       "https://images.unsplash.com/photo-1625225233840-695456021cde?q=80&w=480&auto=format&fit=crop",
     price: 59,
@@ -745,6 +757,7 @@ export const NewArrivals = [
   {
     id: "arrival_006",
     name: "Bluetooth Adapter",
+    slug: "bluetooth-adapter",
     image:
       "https://images.unsplash.com/photo-1625948515291-69613efd103f?q=80&w=480&auto=format&fit=crop",
     price: 24,
@@ -1265,6 +1278,7 @@ export const ListingProducts = [
   {
     id: "prod_001",
     name: "Apple iPhone 14 Pro Max",
+    slug: "apple-iphone-14-pro-max",
     price: 1099,
     originalPrice: 1199,
     discount: 8,
@@ -1279,6 +1293,7 @@ export const ListingProducts = [
   {
     id: "prod_002",
     name: "Samsung Galaxy S23 Ultra",
+    slug: "samsung-galaxy-s23-ultra",
     price: 999,
     originalPrice: 1199,
     discount: 17,
@@ -1293,6 +1308,7 @@ export const ListingProducts = [
   {
     id: "prod_003",
     name: "MacBook Pro 16-inch M2",
+    slug: "macbook-pro-16",
     price: 2499,
     originalPrice: null,
     discount: 0,
@@ -1307,6 +1323,7 @@ export const ListingProducts = [
   {
     id: "prod_004",
     name: "Sony WH-1000XM5 Headphones",
+    slug: "sony-wh-1000xm5",
     price: 349,
     originalPrice: 399,
     discount: 13,
@@ -1321,6 +1338,7 @@ export const ListingProducts = [
   {
     id: "prod_005",
     name: "iPad Air 5th Generation",
+    slug: "ipad-air-5",
     price: 599,
     originalPrice: 649,
     discount: 8,
@@ -1335,6 +1353,7 @@ export const ListingProducts = [
   {
     id: "prod_006",
     name: "Apple Watch Series 9",
+    slug: "apple-watch-series-9",
     price: 429,
     originalPrice: null,
     discount: 0,
@@ -1349,6 +1368,7 @@ export const ListingProducts = [
   {
     id: "prod_007",
     name: "Dell XPS 13 Laptop",
+    slug: "dell-xps-13",
     price: 1299,
     originalPrice: 1499,
     discount: 13,
@@ -1363,6 +1383,7 @@ export const ListingProducts = [
   {
     id: "prod_008",
     name: "AirPods Pro 2nd Gen",
+    slug: "airpods-pro-2",
     price: 249,
     originalPrice: null,
     discount: 0,
@@ -1377,6 +1398,7 @@ export const ListingProducts = [
   {
     id: "prod_009",
     name: "Samsung 55-inch QLED 4K TV",
+    slug: "samsung-qled-4k-tv",
     price: 799,
     originalPrice: 999,
     discount: 20,
@@ -1391,6 +1413,7 @@ export const ListingProducts = [
   {
     id: "prod_010",
     name: "Bose QuietComfort Earbuds",
+    slug: "bose-quitecomfort",
     price: 279,
     originalPrice: 299,
     discount: 7,
@@ -1405,6 +1428,7 @@ export const ListingProducts = [
   {
     id: "prod_011",
     name: "Google Pixel 8 Pro",
+    slug: "google-pixel-8-pro",
     price: 899,
     originalPrice: 999,
     discount: 10,
@@ -1419,6 +1443,7 @@ export const ListingProducts = [
   {
     id: "prod_012",
     name: "LG UltraGear Gaming Monitor",
+    slug: "lg-ultragear-monitor",
     price: 449,
     originalPrice: 549,
     discount: 18,
