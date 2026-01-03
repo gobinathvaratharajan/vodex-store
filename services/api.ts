@@ -61,8 +61,15 @@ export const api = {
     getListing: () => get<Product[]>("/products/listing"),
     getById: (id: string) => get<Product>(`/products/${id}`),
     getByIds: async (ids: string[]) => {
-      const all = await get<Product[]>("/products/listing");
-      return all.filter((p) => ids.includes(p.id));
+      const [listing, featured, explore, newArrivals] = await Promise.all([
+        get<Product[]>("/products/listing"),
+        get<Product[]>("/products/featured"),
+        get<Product[]>("/products/explore"),
+        get<Product[]>("/products/new-arrivals"),
+      ]);
+      const all = [...listing, ...featured, ...explore, ...newArrivals];
+      const uniqueAll = Array.from(new Map(all.map((item) => [item.id, item])).values());
+      return uniqueAll.filter((p) => ids.includes(p.id));
     },
     search: async (searchTerm: string) => {
       const all = await get<Product[]>("/products/listing");

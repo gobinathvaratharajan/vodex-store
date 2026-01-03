@@ -16,9 +16,11 @@ import {
 import { useSelector } from "react-redux";
 import { RootState } from "@/store";
 import { SearchInput } from "@/components/SearchInput";
+import { FavoritesDropdown } from "@/components/FavoritesDropdown";
+import { CartDropdown } from "@/components/CartDropdown";
 
 export function Header() {
-  const { navigationLinks, headerActions, cartItems, favoriteProductIds } = useSelector(
+  const { navigationLinks, headerActions } = useSelector(
     (state: RootState) => state.data
   );
 
@@ -49,6 +51,12 @@ export function Header() {
           <div className="order-2 md:order-3 ms-auto lg:ms-0">
             <div className="flex justify-end items-center gap-x-2">
               {headerActions.map((action) => {
+                if (action.id === "favorite") {
+                  return <FavoritesDropdown key={action.id} />;
+                } else if (action.id === "cart") {
+                  return <CartDropdown key={action.id} />;
+                }
+
                 const Icon =
                   {
                     user: User,
@@ -56,12 +64,7 @@ export function Header() {
                     "shopping-cart": ShoppingCart,
                   }[action.icon] || User;
 
-                let badgeCount = action.badge || 0;
-                if (action.id === "cart") {
-                  badgeCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-                } else if (action.id === "favorite") {
-                  badgeCount = favoriteProductIds.length;
-                }
+                const badgeCount = action.badge || 0;
 
                 return (
                   <Link
@@ -89,7 +92,7 @@ export function Header() {
       </div>
 
       <div className="max-w-340 w-full mx-auto px-4 sm:px-6 lg:px-8 pb-1">
-        <div className="relative flex basis-full items-center gap-x-1 min-h-[44px]">
+        <div className="relative flex basis-full items-center gap-x-1 min-h-11">
           <div className="flex flex-row items-center gap-x-1 overflow-x-auto [&::-webkit-scrollbar]:h-0 w-full">
             {navigationLinks.map((link) => {
               if (link.subItems) {
